@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpRequest
 from django.views import generic
-
 from taxi.models import Driver, Car, Manufacturer
 
 
@@ -19,7 +18,7 @@ def index(request: HttpRequest) -> HttpResponse:
 
 class ManufacturerListView(generic.ListView):
     model = Manufacturer
-    queryset = Manufacturer.objects.all().order_by("name")
+    queryset = Manufacturer.objects.order_by("name")
     paginate_by = 5
 
 
